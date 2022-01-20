@@ -13,23 +13,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Defines the structure of the Link database table
-// Defines default values for id and createdAt.
-model Link {
-  id          Int      @id @default(autoincrement())   
-  createdAt   DateTime @default(now()) 
-  description String
-  url         String
-  postedBy    User?    @relation(name: "PostedBy", fields: [postedById], references: [id])
-  postedById  Int?
-  voters      User[]   @relation(name: "Votes")
-}
-
 model User {
   id          Int      @id @default(autoincrement())
   name        String
   email       String   @unique 
   password    String
-  links       Link[]   @relation(name: "PostedBy")  
-  votes       Link[]   @relation(name: "Votes") 
+  pfp         String 
 }
