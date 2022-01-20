@@ -102,6 +102,7 @@ export interface NexusGenArgTypes {
       email: string; // String!
       name: string; // String!
       password: string; // String!
+      pfp: string; // String!
     }
   }
 }

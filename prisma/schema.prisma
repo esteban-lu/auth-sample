@@ -18,5 +18,5 @@ model User {
   name        String
   email       String   @unique 
   password    String
-  pfp         String 
+  pfp         String   @default("default.jpg")
 }
